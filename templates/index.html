@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Python Script Runner</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Python Script Runner</h1>
+
+        <!-- Selector para modo de operação -->
+        <div class="mode-selector">
+            <label for="mode">Mode:</label>
+            <select id="mode">
+                <option value="write">Write in Terminal</option>
+                <option value="choose">Choose Script</option>
+            </select>
+        </div>
+
+        <!-- Input de texto para escrever código -->
+        <textarea id="python-code" placeholder="Write or paste your Python code here..."></textarea>
+
+        <!-- Div para listar os scripts disponíveis -->
+        <div id="script-selector" style="display: none;">
+            <label for="projects">Projects:</label>
+            <select id="projects"></select>
+        
+            <label for="scripts">Scripts:</label>
+            <select id="scripts"></select>
+        </div>
+
+        <!-- Botões -->
+        <button id="run-button">Run Script</button>
+        <button id="clear-button">Clear Terminal</button>
+
+        <!-- Terminal -->
+        <pre id="terminal"></pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
